@@ -45,6 +45,7 @@ export default function ChatPage() {
         setResponse(data.choices?.[0]?.message?.content || 'No response');
       }
     } catch (err) {
+      console.log(err);
       setResponse('Request failed');
     } finally {
       setIsLoading(false);

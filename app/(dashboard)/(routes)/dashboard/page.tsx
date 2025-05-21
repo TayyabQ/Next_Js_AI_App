@@ -58,24 +58,27 @@ import { useRouter } from "next/navigation";
             </p>
         </div>
         <div className="px-4 md:px-20 lg:px-32 space-y-4">
-            {tools.map((tool) => (
-        <Card className="hover:shadow-md transition cursor-pointer">
-                <div
-                  onClick={() => router.push(tool.href)}
-                  className="p-4 border-black/5 flex flex-row items-center justify-between w-full"
-                >
-                <div className="flex items-center gap-x-4">
-                                      <div className={cn("p-2 w-fit rounded-md", tool.bgColor)}>
-                                          <tool.icon className={cn("w-8 h-8", tool.color)}/>
-                                      </div>
-                                      <div className="font-semibold">
-                                          {tool.label}
-                                      </div>
+        {tools.map((tool) => (
+          <Card
+            key={tool.label}
+            className="hover:shadow-md transition cursor-pointer"
+          >
+            <div
+              onClick={() => router.push(tool.href)}
+              className="p-4 border-black/5 flex flex-row items-center justify-between w-full"
+            >
+              <div className="flex items-center gap-x-4">
+                <div className={cn("p-2 w-fit rounded-md", tool.bgColor)}>
+                  <tool.icon className={cn("w-8 h-8", tool.color)} />
                 </div>
-                <ArrowRight className="h-5 w-5"/>
+                <div className="font-semibold">
+                  {tool.label}
+                </div>
               </div>
-          </Card>                                    
-            ))}
+              <ArrowRight className="h-5 w-5" />
+            </div>
+          </Card>
+        ))}
         </div>
     </div>
   );
