@@ -1,6 +1,6 @@
 import { UserButton } from "@clerk/nextjs"
-import { Button } from "./ui/button"
-import {Menu} from "lucide-react"
+// import { Button } from "./ui/button"
+// import {Menu} from "lucide-react"
 
 import MobileSidebar from "./mobile-sidebar"
 
